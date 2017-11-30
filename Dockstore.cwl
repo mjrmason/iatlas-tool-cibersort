@@ -4,17 +4,16 @@
 
 cwlVersion: v1.0
 class: CommandLineTool
-#baseCommand: [Rscript, /usr/local/bin/cibersort_wrapper.R]
-baseCommand: [Rscript, /home/aelamb/repos/irwg/iatlas-tool-cibersort/bin/cibersort_wrapper.R]
+baseCommand: [Rscript, /usr/local/bin/cibersort_wrapper.R]
 
 doc: "run CIBERSORT"
 
 requirements:
 - class: InlineJavascriptRequirement
 
-#hints:
-#  DockerRequirement:
-#    dockerPull: quay.io/cri-iatlas/iatlas-tool-epic
+hints:
+  DockerRequirement:
+    dockerPull: quay.io/cri-iatlas/iatlas-tool-cibersort
 
 inputs:
 
@@ -36,12 +35,6 @@ inputs:
     inputBinding:
       prefix: --output_file
     doc: Path to write output file
-
-  reference_type:
-    type: ["null", string]
-    inputBinding:
-      prefix: --reference_type
-    doc: One of NULL, 'TRef', BRef', 'list'. If list, refProfiles, sigGenes args must be given. See documetation for full description. 
 
   perm:
     type: ["null", int]
@@ -65,7 +58,7 @@ inputs:
     type: ["null", string]
     inputBinding:
       prefix: --abs_method
-    doc: If absolute is set to TRUE, choose method: 'no.sumto1' or 'sig.score'
+    doc: If absolute is set to TRUE, choose method 'no.sumto1' or 'sig.score'
 
 outputs:
 
