@@ -1,6 +1,6 @@
-library(argparse)
-source("/home/aelamb/repos/irwg/iatlas-tool-cibersort/bin/CIBERSORT.R")
+source("/usr/local/bin/CIBERSORT.R")
 
+library(argparse)
 parser = ArgumentParser(description = 'Deconvolute tumor samples with CIBERSORT')
 
 # required args
