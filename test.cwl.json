@@ -1,0 +1,15 @@
+{
+    "sig_matrix_file": {
+        "path": "sample.references.matrix.txt", 
+        "class": "File"
+    }, 
+    "mixture_file": {
+        "path": "sample.mixtures.matrix.txt", 
+        "class": "File"
+    }, 
+    "output_file_string": "./output_file.RDS",
+    "perm": 0,
+    "QN": true,
+    "absolute": false,
+    "abs_method": "sig.score"
+}
