@@ -1,6 +1,7 @@
 source("/usr/local/bin/CIBERSORT.R")
 
 library(argparse)
+library(tidyverse)
 parser = ArgumentParser(description = 'Deconvolute tumor samples with CIBERSORT')
 
 # required args
@@ -50,5 +51,7 @@ result_matrix <- CIBERSORT(
     args$absolute,
     args$abs_method)
 
-
-write.table(result_matrix, args$output_file, quote = F, sep = "\t")
+result_matrix %>% 
+    as.data.frame %>% 
+    rownames_to_column("sample") %>% 
+    write_tsv(args$output_file)
