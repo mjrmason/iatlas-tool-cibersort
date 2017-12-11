@@ -8,7 +8,7 @@ RUN apt-get update && apt-get -y install python3
 RUN apt-get -y install r-base libcurl4-openssl-dev libssl-dev 
 
 RUN echo "r <- getOption('repos'); r['CRAN'] <- 'http://cran.us.r-project.org'; options(repos = r);" > ~/.Rprofile
-RUN Rscript -e "install.packages(c('argparse', 'e1071', tidyverse))"
+RUN Rscript -e "install.packages(c('argparse', 'e1071', 'tidyverse'))"
 RUN Rscript -e "source('https://bioconductor.org/biocLite.R');biocLite();biocLite('preprocessCore')"
 
 COPY bin/cibersort_wrapper.R /usr/local/bin/
