@@ -31,7 +31,7 @@ inputs:
 
   output_file_string:
     type: string
-    default: "./output_file.RDS"
+    default: "./output_file.tsv"
     inputBinding:
       prefix: --output_file
     doc: Path to write output file

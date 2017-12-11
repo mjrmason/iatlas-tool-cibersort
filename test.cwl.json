@@ -7,7 +7,7 @@
         "path": "sample.mixtures.matrix.txt", 
         "class": "File"
     }, 
-    "output_file_string": "./output_file.RDS",
+    "output_file_string": "./output_file.tsv",
     "perm": 0,
     "QN": true,
     "absolute": false,

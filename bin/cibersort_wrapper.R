@@ -18,7 +18,7 @@ parser$add_argument(
 # optional argumennts
 parser$add_argument(
     "--output_file",
-    default = "./output_file.RDS",
+    default = "./output_file.tsv",
     type = "character",
     help = "Path to output file.")
 parser$add_argument(
@@ -42,7 +42,7 @@ parser$add_argument(
 
 args <- parser$parse_args()
 
-result_object <- CIBERSORT(
+result_matrix <- CIBERSORT(
     args$sig_matrix_file,
     args$mixture_file,
     args$perm,
@@ -51,4 +51,4 @@ result_object <- CIBERSORT(
     args$abs_method)
 
 
-saveRDS(result_object, args$output_file)
+write.table(result_matrix, args$output_file, quote = F, sep = "\t")
